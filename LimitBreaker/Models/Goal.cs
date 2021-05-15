@@ -19,6 +19,7 @@ namespace LimitBreaker.Models
         public string GoalDescription { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
+        public IEnumerable<Max> Maxes { get; set; }
 
 
         //CONSTRUCTORS

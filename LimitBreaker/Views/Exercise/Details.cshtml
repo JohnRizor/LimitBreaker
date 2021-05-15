@@ -1,0 +1,65 @@
+﻿@model Exercise
+
+<fieldset class="border d-inline-block mb-3 mr-4 p-3 pt-0 shadow align-top">
+    <legend> Exercise Details </legend>
+
+    <table>
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> Exercise Type: </th>
+                <td class="pl-1"> @Model.ExerciseType </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Repetition(s): </th>
+                <td class="pl-1"> @Model.Repetition </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Set(s): </th>
+                <td class="pl-1"> @Model.Set </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Date: </th>
+                <td class="pl-1"> @Model.Date </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Weight Amount: </th>
+                <td class="pl-1"> @Model.WeightAmount </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Percentage Breakdown: </th>
+                <td class="pl-1"> @Model.Percentage </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Description: </th>
+                <td class="pl-1"> @Model.Description </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Completed: </th>
+                <td class="pl-1"> @Model.Completed </td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center" colspan="2">
+                    <a asp-controller="Exercise" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-warning mr-1 text-dark"> Edit </a>
+                    <a asp-controller="Exercise" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-danger ml-1 mr-1"> Delete </a>
+                    <a asp-controller="Exercise" asp-action="Index" class="btn btn-sm btn-outline-primary ml-1"> Back </a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>

@@ -1,0 +1,61 @@
+﻿@model Max
+
+<fieldset class="border d-inline-block mb-3 mr-4 p-3 pt-0 shadow align-top">
+    <legend> Delete Max </legend>
+
+    <table>
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> Exercise: </th>
+                <td class="pl-1"> @Model.Exercise </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Max Amount: </th>
+                <td class="pl-1"> @Model.WeightAmount.ToString() </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Date: </th>
+                <td class="pl-1"> @Model.Date.ToString("mm-dd-yyyy") </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Difficulty: </th>
+                <td class="pl-1"> @Model.DifficultyLevel </td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center" colspan="2">
+                    <span class="bg-warning text-center text-danger pl-2 pr-2"> Delete Max? </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center" colspan="2">
+                    <form method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Delete Max" class="btn btn-sm btn-outline-danger mr-1" />
+                        <a asp-controller="Max" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-primary ml-1"> Cancel </a>
+                    </form>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>
+

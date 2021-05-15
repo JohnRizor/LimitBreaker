@@ -20,6 +20,7 @@ namespace LimitBreaker.Models
         public string DifficultyLevel { get; set; }
         public bool? NewMax { get; set; }
         public bool? Completed { get; set; }
+        public IEnumerable<Exercise> Exercises { get; set; }
         public int GoalId { get; set; }
         public Goal Goal { get; set; }
         public int UserId { get; set; }

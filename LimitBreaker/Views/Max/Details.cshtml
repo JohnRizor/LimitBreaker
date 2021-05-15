@@ -1,0 +1,101 @@
+﻿@model Max
+
+<fieldset class="border d-inline-block mb-3 mr-4 p-3 pt-0 shadow align-top">
+    <legend> Max Details </legend>
+
+    <table>
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> Exercise: </th>
+                <td class="pl-1"> @Model.Exercise </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Max Amount: </th>
+                <td class="pl-1"> @Model.WeightAmount </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Date: </th>
+                <td class="pl-1"> @Model.Date </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Difficulty: </th>
+                <td class="pl-1"> @Model.DifficultyLevel </td>
+            </tr>
+            
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center" colspan="2">
+                    <a asp-controller="Max" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-warning mr-1 text-dark"> Edit </a>
+                    <a asp-controller="Max" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-danger ml-1 mr-1"> Delete </a>
+                    <a asp-controller="Max" asp-action="Index" class="btn btn-sm btn-outline-primary ml-1"> Back </a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>
+
+
+
+<fieldset class="border d-inline-block p-3 shadow align-top">
+    <legend> Exercises </legend>
+
+    <table>
+        <thead>
+            <tr>
+                <td class="text-center" colspan="6">
+                    <a asp-controller="Exercise" asp-action="Create" asp-route-vehicleId="@Model.Id"
+                       class="btn btn-sm btn-outline-success">
+                        Add A Exercise
+                    </a>
+                </td>
+            </tr>
+
+            <tr> <td colspan="6"> <hr /> </td> </tr>
+
+            <tr>
+                <th class="pr-1 text-center"> Exercise Type          </th>
+                <th class="pr-1 text-center"> Repetition       </th>
+                <th class="pr-1 text-center"> Set      </th>
+                <th class="pr-1 text-center"> Date    </th>
+                <th class="pr-1 text-center"> Weight Amount </th>
+                <th class="pr-1 text-center"> Percentage          </th>
+                <th class="pr-1 text-center"> Description          </th>
+                <th class="pr-1 text-center"> Completed  </th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (Exercise e in Model.Exercises)
+            {
+            <tr>
+                <td class="pr-1 text-center"> @e.ExerciseType.ToString() </td>
+                <td class="pl-1 text-center"> @e.Repetition      </td>
+                <td class="pr-1 text-center"> @e.Set.ToString()     </td>
+                <td class="pl-1 text-center"> @e.Date.ToString("MM-dd-yyyy")     </td>
+                <td class="pr-1 text-center"> @e.WeightAmount </td>
+                <td class="pr-1 text-center"> @e.Percentage     </td>
+                <td class="pr-1 text-center"> @e.Description     </td>
+                <td class="pr-1 text-center"> @e.Completed.ToString()    </td>
+
+                <td class="text-center">
+                    <a asp-controller="Exercise" asp-action="Details" asp-route-id="@e.Id" class="btn btn-sm btn-outline-primary">
+                        Details
+                    </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>

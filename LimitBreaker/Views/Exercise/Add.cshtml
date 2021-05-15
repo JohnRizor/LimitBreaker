@@ -1,0 +1,74 @@
+﻿@model Exercise
+
+<fieldset class="border d-inline-block p-3 shadow">
+    <legend> Add A Exercise </legend>
+
+    <form method="post">
+        <table>
+            @if (ViewData.ModelState.ErrorCount > 0)
+            {
+                <thead>
+                    <tr>
+                        <td colspan="2">
+                            <div asp-validation-summary="All" class="text-danger"> </div>
+                        </td>
+                    </tr>
+
+                    <tr> <td class="pl-2 pr-2" colspan="2"> <hr /> </td> </tr>
+                </thead>
+            }
+
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> Exercise Type: </th>
+                <td class="pl-1"> <input asp-for="ExerciseType" class="rounded" required /> </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Repetition(s): </th>
+                <td class="pl-1"> <input asp-for="Repetition" class="rounded" required /> </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Set(s): </th>
+                <td class="pl-1"> <input asp-for="Set" class="rounded" required /> </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Date: </th>
+                <td class="pl-1"> <input asp-for="Date" class="rounded" /> </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Weight Amount: </th>
+                <td class="pl-1"> <input asp-for="WeightAmount" class="rounded" /> </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Percentage Breakdown: </th>
+                <td class="pl-1"> <input asp-for="Percentage" class="rounded" /> </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Description: </th>
+                <td class="pl-1"> <input asp-for="Description" class="rounded" /> </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Completed: </th>
+                <td class="pl-1"> <input asp-for="Completed" class="rounded" /> </td>
+            </tr>
+            
+        </tbody>
+
+            <tfoot>
+                <tr> <td class="pl-2 pr-2" colspan="2"> <hr /> </td> </tr>
+
+                <tr>
+                    <td class="text-center" colspan="2">
+                        <input class="btn btn-sm btn-outline-success mr-1" type="submit" value="Add Exercise" />
+                        <a asp-controller="Exercise" asp-action="Index" class="btn btn-sm btn-outline-primary ml-1"> Cancel </a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </form>
+</fieldset>

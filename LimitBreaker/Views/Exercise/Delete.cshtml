@@ -1,0 +1,77 @@
+﻿@model Exercise
+
+<fieldset class="border d-inline-block mb-3 mr-4 p-3 pt-0 shadow align-top">
+    <legend> Delete Exercise </legend>
+
+    <table>
+        <tbody>
+            <tr>
+                <th class="pr-1 text-right"> Exercise Type: </th>
+                <td class="pl-1"> @Model.ExerciseType </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Repetition(s): </th>
+                <td class="pl-1"> @Model.Repetition </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Set(s): </th>
+                <td class="pl-1"> @Model.Set </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Date: </th>
+                <td class="pl-1"> @Model.Date </td>
+            </tr>
+
+            <tr>
+                <th class="pr-1 text-right"> Weight Amount: </th>
+                <td class="pl-1"> @Model.WeightAmount </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Percentage Breakdown: </th>
+                <td class="pl-1"> @Model.Percentage </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Description: </th>
+                <td class="pl-1"> @Model.Description </td>
+            </tr>
+            <tr>
+                <th class="pr-1 text-right"> Completed: </th>
+                <td class="pl-1"> @Model.Completed </td>
+            </tr>
+            
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center" colspan="2">
+                    <span class="bg-warning text-center text-danger pl-2 pr-2"> Ready To Delete </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center" colspan="2">
+                    <form method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Delete Exercise" class="btn btn-sm btn-outline-danger mr-1" />
+                        <a asp-controller="Exercise" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-primary ml-1"> Cancel </a>
+                    </form>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</fieldset>

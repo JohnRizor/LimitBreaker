@@ -1,0 +1,40 @@
+﻿@model IQueryable<Max>
+
+<fieldset class="border d-inline-block p-3 shadow">
+    <legend> Max </legend>
+
+    <table>
+        <thead>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <a asp-controller="Max" asp-action="Add" class="btn btn-sm btn-outline-success"> Add A Max </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (Max m in Model)
+            {
+                <tr>
+                    <td>
+                        @m.Exercise
+                        @m.WeightAmount
+                        @m.Date
+                    </td>
+
+                    <td>
+                        <a asp-controller="Max" asp-action="Details" asp-route-id="@m.Id" class="btn btn-sm btn-outline-primary">
+                            Details
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>
